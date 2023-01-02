@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/ic_home"
+        android:title="Home"
+        android:id="@+id/homeFragment" />
+    <item
+        android:icon="@drawable/ic_football"
+        android:title="@string/fixtures"
+        android:id="@+id/categoryFragment"/>
+    <item
+        android:icon="@drawable/ic_list"
+        android:title="List"
+        android:id="@+id/listFragment2"/>
+    <item
+        android:icon="@drawable/ic_baseline_news"
+        android:title="News"
+        android:id="@+id/newsFragment"/>
+</menu>

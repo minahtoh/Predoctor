@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="5dp"
+    android:background="@color/md_theme_dark_onSecondary">
+    <TextView
+        android:textColor="@color/md_theme_dark_onSecondaryContainer"
+        android:id="@+id/predictions_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Predictions List"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="20sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        android:textStyle="bold"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/predictions_list"
+        android:layout_marginTop="5dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/export_cv"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardBackgroundColor="@color/md_theme_dark_onPrimary">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+        <TextView
+            android:id="@+id/total_selections"
+            android:textColor="@color/md_theme_dark_onPrimaryContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Selections: "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/total_selections_text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/total_selections"
+                app:layout_constraintTop_toTopOf="@+id/total_selections"/>
+
+            <TextView
+                android:id="@+id/total_odds"
+                android:textColor="@color/md_theme_dark_onPrimaryContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="Total Odds: "
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/total_odds_text"
+                app:layout_constraintTop_toTopOf="@+id/total_odds"
+                app:layout_constraintStart_toEndOf="@+id/total_odds"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Send List"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintTop_toBottomOf="@id/delete_icon"
+        app:layout_constraintBottom_toTopOf="@+id/export_cv"
+        tools:listitem="@layout/list_view"/>
+
+    <ImageView
+        android:clickable="true"
+        android:id="@+id/delete_icon"
+        android:layout_marginEnd="3dp"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        android:src="@drawable/ic_baseline_delete_24"
+        app:tint="@color/md_theme_dark_onSecondaryContainer" />
+    <TextView
+        android:id="@+id/clear_list_text"
+        android:clickable="true"
+        android:textColor="@color/md_theme_dark_onPrimaryContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear List"
+        app:layout_constraintEnd_toStartOf="@+id/delete_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/delete_icon"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
